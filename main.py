@@ -214,7 +214,11 @@ class Canvas:
 # ---------------------------------------------------------------------------
 
 def max_chars_for_width(px_width, scale):
-    """How many font characters fit in px_width at the given scale."""
+    """How many font characters fit in px_width at the given scale.
+
+    Used BEFORE any caption string is written below, so every card's text
+    budget is known ahead of time instead of guessed and checked by eye.
+    """
     return px_width // (FONT_ADVANCE * scale)
 
 
